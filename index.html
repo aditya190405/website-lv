@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Letter For You ❤️</title>
+  <meta name="description" content="A beautiful romantic single-page digital love letter. Built with love just for you.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Background Heart Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Confetti Canvas for celebration climax -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Loading Screen -->
+  <div id="loader-screen">
+    <div class="loader-heart">
+      <svg viewBox="0 0 32 29">
+        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,20.6 c6.5-8.7,16-11.2,16-20.6C32,3.8,28.2,0,23.6,0z"/>
+      </svg>
+    </div>
+    <div class="loader-text">Unfolding our story...</div>
+  </div>
+
+  <!-- Floating Controls (Theme Toggle) -->
+  <div class="floating-controls">
+    <button class="btn-icon" id="theme-toggle" aria-label="Toggle Theme" title="Toggle Dark/Light Mode">
+      <!-- Moon Icon (Default Light Mode looks at dark theme option) -->
+      <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <!-- Sun Icon (Hidden by default) -->
+      <svg id="sun-icon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Music Control (Fixed Bottom Right) -->
+  <div class="music-control-fixed" id="music-control-container">
+    <div class="music-info-badge">
+      <span class="music-note-icon">🎵</span>
+      <div class="music-text-details">
+        <div class="song-title">"A Thousand Years (Piano Version)"</div>
+        <div class="song-artist">Christina Perri</div>
+      </div>
+    </div>
+    <button class="btn-icon" id="music-toggle" aria-label="Play Music" title="Play Music">
+      <!-- Play Icon -->
+      <svg id="play-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+      <!-- Pause Icon (Hidden) -->
+      <svg id="pause-icon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Section 1: Hero -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="hero-title-container">
+        <h1 class="hero-title title-font">
+          <span id="typewriter-title"></span><span class="cursor-blink">|</span>
+        </h1>
+      </div>
+      <p class="hero-subtitle body-font">A little place made just for you.</p>
+      <div class="hero-heart">❤️</div>
+    </div>
+    <a href="#love-letter" class="scroll-indicator" id="hero-scroll-btn">
+      <span class="body-font">Open Letter</span>
+      <i>↓</i>
+    </a>
+  </section>
+
+  <!-- Section 2: Love Letter -->
+  <section class="love-letter-section" id="love-letter">
+    <div class="section-container">
+      <div class="letter-card">
+        <div class="letter-paragraphs">
+          <p class="letter-p font-title" style="font-size: 1.8rem; font-style: normal; font-weight: 700; color: var(--accent-color); margin-bottom: 20px;">Dear Vivi,</p>
+          <p class="letter-p">Aku ingin meminta maaf atas kejadian kemarin.</p>
+          <p class="letter-p">Aku tahu mungkin ada kata-kata, sikap, atau tindakan dariku yang membuatmu kecewa, sedih, atau merasa tidak nyaman. Untuk semua itu, aku sungguh meminta maaf.</p>
+          <p class="letter-p">Percayalah, tidak pernah ada niat sedikit pun dalam hatiku untuk menyakitimu.</p>
+          <p class="letter-p">Sejak mengenalmu, ada banyak hal yang berubah dalam hidupku. Kehadiranmu membawa kebahagiaan yang sulit dijelaskan dengan kata-kata. Kamu menjadi seseorang yang selalu ingin aku lihat, aku dengar suaranya, dan aku pikirkan setiap hari.</p>
+          <p class="letter-p">Aku mungkin bukan orang yang sempurna.<br>Aku masih sering melakukan kesalahan.<br>Aku masih belajar memahami dan menjadi seseorang yang lebih baik.</p>
+          <p class="letter-p">Namun satu hal yang selalu ingin kamu tahu adalah:</p>
+          <p class="letter-p accent">Perasaanku kepadamu selalu tulus.</p>
+          <p class="letter-p">Aku menyukai caramu tersenyum.<br>Aku menyukai caramu berbicara.<br>Aku menyukai perhatian kecil yang sering kamu berikan tanpa kamu sadari.</p>
+          <p class="letter-p accent">Dan semakin hari, aku semakin sadar bahwa kamu adalah seseorang yang sangat berarti untukku.</p>
+          <p class="letter-p">Aku tidak tahu bagaimana masa depan akan berjalan.<br>Tetapi aku berharap kita bisa memperbaiki kesalahpahaman, saling memahami, dan terus berjalan bersama.</p>
+          <p class="letter-p">Terima kasih karena sudah hadir dalam hidupku.</p>
+          <p class="letter-p">Terima kasih karena sudah menjadi Vivi yang aku kenal.</p>
+          <p class="letter-p">Dan sekali lagi,</p>
+          <p class="letter-p accent">Maaf atas kejadian kemarin.</p>
+          <p class="letter-p signature">Dengan segala ketulusan,</p>
+          <p class="letter-p signature accent">❤️ Untuk Vivi</p>
+        </div>
+
+        <div class="continue-btn-container">
+          <button class="continue-btn body-font" data-target="#timeline">
+            Our Journey
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Memory Timeline -->
+  <section class="timeline-section" id="timeline">
+    <div class="section-container">
+      <h2 class="section-title title-font">Our Timeline</h2>
+      <div class="timeline">
+        
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-badge"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">The Beginning</span>
+            <h3>❤️ The day we met</h3>
+            <p>A beautiful spark in the dark, the day my world shifted and you stepped in. It changed everything.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-badge"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Getting Closer</span>
+            <h3>❤️ Our first conversation</h3>
+            <p>Hours felt like minutes as we talked about everything and nothing. I knew then you were incredibly special.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-badge"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Building Bonds</span>
+            <h3>❤️ Our favorite memories</h3>
+            <p>The shared laughter, quiet glances, support through tough times, and adventures written deeply in my heart.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-badge"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Present Day</span>
+            <h3>❤️ Today</h3>
+            <p>Here we are, stronger and more in love than ever. And I would choose you over and over again, without a doubt.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="continue-btn-container">
+        <button class="continue-btn body-font" data-target="#reasons">
+          Why You Are Special
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Reasons -->
+  <section class="reasons-section" id="reasons">
+    <div class="section-container">
+      <h2 class="section-title title-font">Why You Are Special</h2>
+      <div class="reasons-grid" id="reasons-grid">
+        <!-- Will be dynamically populated with 20 items in script.js for clean structure and staggered delay -->
+      </div>
+      <div class="continue-btn-container">
+        <button class="continue-btn body-font" data-target="#gallery">
+          Captured Moments
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Gallery -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-container">
+      <h2 class="section-title title-font">Captured Moments</h2>
+      <div class="gallery-grid">
+        
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item" data-index="0">
+          <img src="assets/first_date.jpg" alt="Our First Date" class="gallery-image" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">The Day We Met</div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item" data-index="1">
+          <img src="assets/cozy_cafe.jpg" alt="Cozy Conversations" class="gallery-image" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Cozy Conversations</div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item" data-index="2">
+          <img src="assets/stargazing.jpg" alt="Under the Stars" class="gallery-image" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Under the Stars</div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item" data-index="3">
+          <img src="assets/sunset.jpg" alt="Sunset Together" class="gallery-image" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Sunset Together</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="continue-btn-container">
+        <button class="continue-btn body-font" data-target="#promise">
+          My Promise
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close Gallery">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <button class="lightbox-arrow lightbox-arrow-left" id="lightbox-prev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-arrow lightbox-arrow-right" id="lightbox-next" aria-label="Next image">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </button>
+  </div>
+
+  <!-- Section 6: Promise Section -->
+  <section class="promise-section" id="promise">
+    <div class="section-container">
+      <blockquote class="promise-quote title-font">
+        "I may make mistakes,
+        <span class="highlight">but my feelings for you are sincere.</span>
+        And if given a chance,
+        <span>I will always choose you again."</span>
+      </blockquote>
+      <div class="continue-btn-container">
+        <button class="continue-btn body-font" data-target="#final">
+          To Vivi
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Final Section -->
+  <section class="final-section" id="final">
+    <div class="section-container">
+      <div class="final-content">
+        <h2 class="final-title title-font">Thank You, Vivi ❤️</h2>
+        <p class="letter-p font-title" style="font-size: 1.4rem; font-style: italic; color: var(--text-light); margin-bottom: 25px;">No matter what happened yesterday,</p>
+        <p class="letter-p accent font-title" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 25px;">I hope tomorrow can be better.</p>
+        <div class="final-heart">❤️</div>
+        <p class="final-text title-font" style="font-size: 1.4rem; margin-top: 20px;">
+          I care about you. <br>
+          I appreciate you. <br>
+          And I hope you can forgive me.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
